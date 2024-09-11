@@ -28,16 +28,6 @@ const userSchema = new Schema({
     type: String,
     default: "./uploads/profil/user1.png",
   },
-  bio: {
-    type: String,
-    max: 1024,
-  },
-  followers: {
-    type: [String],
-  },
-  following: {
-    type: [String],
-  },
   likes: {
     type: [String],
   },

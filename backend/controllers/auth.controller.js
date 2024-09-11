@@ -30,6 +30,7 @@ module.exports.signUp = async (req, res) => {
   }
 };
 
+//LOGIN
 module.exports.signIn = async (req, res) => {
   const { email, password } = req.body;
 
@@ -40,10 +41,11 @@ module.exports.signIn = async (req, res) => {
     res.status(200).json({ user: user._id });
   } catch (error) {
     console.log(error);
-    res.status(200).json(error);
+    res.status(400).json(error);
   }
 };
 
+//LOGOUT
 module.exports.logout = (req, res) => {
   res.cookie("jwt", "", { maxAge: 1 });
   res.redirect("/");
