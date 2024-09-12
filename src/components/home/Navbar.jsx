@@ -1,46 +1,46 @@
 "use client";
 
-// import { VscBell } from "react-icons/vsc";
-// import { HiOutlinePresentationChartBar } from "react-icons/hi2";
-// import { IoBagAddOutline } from "react-icons/io5";
-// import { BsBookmarkStar, BsHouse } from "react-icons/bs";
+import { VscBell } from "react-icons/vsc";
+import { HiOutlinePresentationChartBar } from "react-icons/hi2";
+import { IoBagAddOutline } from "react-icons/io5";
+import { BsBookmarkStar, BsHouse } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const links = [
   {
     label: "Accueil",
     path: "/home",
-    // icon: <BsHouse size={"1.25rem"} />,
+    icon: <BsHouse size={"1.25rem"} />,
   },
   {
     label: "Projet",
     path: "/projet",
-    // icon: <BsBookmarkStar size={"1.25rem"} />,
+    icon: <BsBookmarkStar size={"1.25rem"} />,
   },
   {
     label: "Villa",
     path: "/villa",
-    // icon: <HiOutlinePresentationChartBar size={"1.25rem"} />,
+    icon: <HiOutlinePresentationChartBar size={"1.25rem"} />,
   },
   {
     label: "Reservation",
     path: "/reservation",
-    // icon: <IoBagAddOutline size={"1.25rem"} />,
+    icon: <IoBagAddOutline size={"1.25rem"} />,
   },
   {
     label: "Rendez-vous",
     path: "/rendezVous",
-    // icon: <IoBagAddOutline size={"1.25rem"} />,
+    icon: <IoBagAddOutline size={"1.25rem"} />,
   },
   {
     label: "Localisation",
     path: "/localisation",
-    // icon: <IoBagAddOutline size={"1.25rem"} />,
+    icon: <IoBagAddOutline size={"1.25rem"} />,
   },
   {
     label: "Notifications",
     path: "notifications",
-    // icon: <VscBell size={"1.25rem"} />,
+    icon: <VscBell size={"1.25rem"} />,
   },
 ];
 
@@ -76,14 +76,14 @@ export default function Navbar() {
               index === 0 ? "rounded-t-xl" : ""
             } `}
           >
-            <i>Hi</i>
+            <i>{item.icon}</i>
             <span className={""}>{item.label}</span>
           </Link>
         ))}
       </div>
 
       <div className="w-full min-h-12">
-        <button className=" w-full text-[var(--white)] h-full rounded-md py-2 px-16 bg-[var(--orange-color)] font-semibold">
+        <button className=" w-full text-[var(--white)] h-full rounded-md py-2 bg-[var(--orange-color)] font-semibold">
           Ajouter un villa
         </button>
       </div>
