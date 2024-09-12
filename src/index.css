@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,body{
+  margin: 0;
+    padding: 0;
+    font-size: calc(0.6vh + 0.45vw + 5px);
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    text-decoration: inherit;
+    font-family: "Inter", sans-serif;
+    /* cursor: url(../public/images/logo.png), auto; */
+}
+
+:root{
+  --orange-color: #ff7705;
+    --purple-color: #b00ff0;
+    --white:#fff;
+      --gray: rgb(247, 247, 247);
+    --bg-gradient: linear-gradient(33deg,
+          var(--orange-color),
+          var(--purple-color));
+  --bgFixed: hsla(240, 100%, 1%, 0.25);
+}
+
+*::selection {
+  background: var(--orange-color);
+  color: var(--white);
+}
+
+.bgText{
+  color: transparent;
+  background: var(--bg-gradient);
+  -webkit-background-clip: text;
+}
+.bgVilla1{
+  background: url("../public/images/chambre19.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bgVilla2{
+  background: url("../public/images/chambre1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bgVilla3{
+  background: url("../public/images/chambre6.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
