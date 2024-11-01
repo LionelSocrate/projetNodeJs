@@ -44,7 +44,7 @@ export default function AddVilla({ handleAfficheAdd }) {
         },
       }).then((res) => {});
       const formData = new FormData();
-      formData.append("name", nom);
+      formData.append("nom", nom);
       formData.append("lot", lot);
       formData.append("file", image);
 
