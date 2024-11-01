@@ -5,5 +5,13 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".transform-style-3d": {
+          transformStyle: "preserve-3d",
+        },
+      });
+    },
+  ],
 };

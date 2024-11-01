@@ -3,13 +3,10 @@ const Schema = mongoose.Schema;
 const bcrypt = require("bcrypt");
 
 const userSchema = new Schema({
-  pseudo: {
+  nom: {
     type: String,
-    minlength: 3,
-    max: 55,
-    unique: true,
+    minLength: 3,
     required: true,
-    trim: true,
   },
   email: {
     type: String,
@@ -21,21 +18,15 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true,
-    minlength: 6,
+    minLength: 6,
     max: 1024,
   },
   picture: {
     type: String,
-    default: "./uploads/profil/user1.png",
-  },
-  likes: {
-    type: [String],
-  },
-  date: {
-    type: Date,
-    default: Date.now,
+    default: "/uploads/user/user.jpg",
   },
 });
+
 userSchema.statics.login = async function (email, password) {
   const user = await this.findOne({ email });
   if (user) {
@@ -43,9 +34,9 @@ userSchema.statics.login = async function (email, password) {
     if (auth) {
       return user;
     }
-    throw Errow("incorrect password");
+    throw Error("incorrect password");
   }
-  throw Errow("incorrect email");
+  throw Error("incorrect email");
 };
 
-module.exports = mongoose.models.users || mongoose.model("user", userSchema);
+module.exports = mongoose.model("users", userSchema);

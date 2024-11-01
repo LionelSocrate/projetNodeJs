@@ -2,30 +2,42 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const villaSchema = new Schema({
-  idProject: {
+  nom: {
     type: String,
-    unique: true,
-    required: true,
-    trim: true,
-  },
-  nomVilla: {
-    type: String,
+    lowercase: true,
     required: true,
   },
   type: {
     type: String,
     required: true,
   },
-  images: {
-    type: [String],
+  idProjet: {
+    type: String,
+    lowercase: true,
   },
-  numLot: {
+  picture: {
+    type: String,
+    default: "/uploads/villa/mendrika.jpg",
+  },
+  planCellule: {
+    type: String,
+    default: "/uploads/cellule/mendrika.jpg",
+  },
+  lot: {
     type: String,
     unique: true,
   },
   description: {
     type: String,
   },
+  isReserv: {
+    type: Boolean,
+    default: false,
+  },
+  date: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
-module.exports = mongoose.models.users || mongoose.model("villa", villaSchema);
+module.exports = mongoose.model("villas", villaSchema);

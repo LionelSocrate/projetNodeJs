@@ -1,6 +1,4 @@
 const userModel = require("../models/user.models");
-const { signUpErrors } = require("../utils/errors.utils");
-const ObjectID = require("mongoose").Types.ObjectID;
 const bcrypt = require("bcrypt");
 const maxAge = 3 * 24 * 60 * 60 * 1000;
 const jwt = require("jsonwebtoken");
@@ -18,15 +16,14 @@ module.exports.signUp = async (req, res) => {
     hassPassword = await bcrypt.hash(req.body.password, salt);
 
     const user = await userModel.create({
-      pseudo: req.body.pseudo,
+      nom: req.body.nom,
       email: req.body.email,
+      picture: req.body.picture,
       password: hassPassword,
     });
     return res.status(200).json({ user });
-  } catch (error) {
-    console.log(error);
-    // const errors = signUpErrors(err);
-    return res.status(500).json(errors);
+  } catch (err) {
+    return res.status(500).json({ err });
   }
 };
 
@@ -39,14 +36,18 @@ module.exports.signIn = async (req, res) => {
     const token = createToken(user._id);
     res.cookie("jwt", token, { httpOnly: true, maxAge });
     res.status(200).json({ user: user._id });
-  } catch (error) {
-    console.log(error);
-    res.status(400).json(error);
+  } catch (err) {
+    res.status(400).send({ err });
   }
 };
 
 //LOGOUT
+
 module.exports.logout = (req, res) => {
-  res.cookie("jwt", "", { maxAge: 1 });
-  res.redirect("/");
+  try {
+    res.cookie("jwt", "", { maxAge: 1 });
+    res.redirect("/");
+  } catch (error) {
+    console.log(error);
+  }
 };
