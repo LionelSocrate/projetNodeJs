@@ -19,9 +19,8 @@ module.exports.visiteurInfo = async (req, res) => {
   try {
     const visiteur = await visiteurModel.findById(req.params.id);
     if (!visiteur) {
-      return res.status(404).json({ message: "reservation not foud" });
-    }
-    return res.status(200).json({ visiteur });
+      return res.status(404).json({ message: "reservation not fond" });
+    }return res.status(200).json({ visiteur });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
