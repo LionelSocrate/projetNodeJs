@@ -57,7 +57,7 @@ module.exports.updateVisiteur = async (req, res) => {
 
     const visiteur = await visiteurModel.findByIdAndUpdate(id, req.body);
     if (!visiteur) {
-      return res.status(404).json({ message: "visiteur not found" });
+      return res.status(404).json({ message: "visiteur not foundll"});
     }
     const updateVisiteur = await visiteurModel.findById(id);
     res.status(200).json(updateVisiteur);
