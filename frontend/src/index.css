@@ -18,20 +18,18 @@
 }
 
 :root{
-  --orange-color: #ff7705;
-  --purple-color: #b00ff0;
-  --white:#fff;
-  /* --white:#241e38; */
-  --bg-gradient:linear-gradient(33deg,
-        var(--orange-color),
-        var(--purple-color));
-      ;
-  --gray: rgb(247, 247, 247);
-  /* --gray: #151221; */
-  --blue: rgb(2, 36, 71);
-  --bgFixed: hsla(120, 100%, 1%, 0.423);
-  --color-gray: #c0afc0;
-  --card-translate-z: 10rem;
+  
+  --bg1: rgb(33, 36, 46);
+    --bg2: rgb(17, 24, 33);
+    --bg3: #0000006f;
+    --blue: rgb(48, 69, 185);
+    --aqua: rgb(60, 183, 187);
+    --pink: rgb(255, 120, 143);
+    --green: rgb(48, 255, 63);
+    --white: rgba(255, 255, 255);
+    --white1: rgba(255, 255, 255, 0.75);
+    --white2: rgba(255, 255, 255, 0.35);
+    --white3: rgba(255, 255, 255, 0.15);
 }
 
 *::selection {
@@ -39,130 +37,67 @@
   color: var(--white);
 }
 
-.react-datepicker__day--selected,
-.react-datepicker__day--keyboard-selected {
-  background-color: rgb(64, 191, 246) !important;
-  border: 1px solid rgb(64, 191, 246) !important;
-}
-
-/* style de date picker */
-
-.react-datepicker__time-list-item--selected {
-  background-color: rgb(64, 191, 246) !important;
-  color: var(--white) !important;
-}
-.react-datepicker__day:hover {
-  background-color: rgb(64, 191, 246,0.25) !important;
-}
-.react-datepicker__time-list-item:hover {
-  background-color: rgb(64, 191, 246,0.25) !important;
-}
-
-
-
-.bgText{
+.titreHome{
   color: transparent;
-  background: var(--bg-gradient);
-  -webkit-background-clip: text;
+    -webkit-background-clip: text !important;
+    background: linear-gradient(135deg, var(--pink), var(--aqua));
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.bgText2{
-  color: transparent;
-  background: linear-gradient(33deg,
-        #fdba74,
-        rgb(50, 52, 59));
-    ;
-  -webkit-background-clip: text;
-}
-.bgGradient{
-  background: linear-gradient(33deg,
-      var(--orange-color),
-      var(--purple-color));;
-}
-.bgGradient2{
-  background: linear-gradient(33deg,
-      #fdba74,
-      rgb(50, 52, 59));;
-}
-.bgGradient3{
-  background: linear-gradient(33deg,
-      rgb(50, 52, 59),#fdba74);
+.ajout {
+  background: linear-gradient(135deg, var(--pink), var(--aqua));
+  transition: 0.25s ease;
 }
 
-
-
-
-.bgVilla1{
-  background: url("../public/images/assemble.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.ajout:hover {
+  background: linear-gradient(135deg, var(--aqua), var(--pink));
 }
-.bgVilla2{
-  background: url("../public/images/6.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.bgUser{
-  background: url("../public/images/bgUser.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.bgVilla4{
-  background: url("../public/images/image\ slider.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.bgVilla5{
-  background: url("../public/images/1.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.shadow1 {
+  position: absolute;
+  top: -5rem;
+  left: 0rem;
+  width: 1px;
+  height: 1px;
+  box-shadow: 0px 0px 200rem 8rem var(--pink);
+  z-index: 2;
 }
 
-.transition{
-  transition: 0.5s  ease-in-out ;
+.shadow2 {
+  position: absolute;
+  bottom: -5rem;
+  right: 0rem;
+  width: 1px;
+  height: 1px;
+  box-shadow: 0px 0px 200rem 8rem var(--aqua);
+  z-index: 2;
 }
-.animHidden{
-  animation: animHidden 0.5s linear;
+.list {
+  background: rgba(17, 24, 33, 0.75);
+  backdrop-filter: blur(1px);
 }
-@keyframes animHidden{
-  0%{
+.afficheAnim {
+  animation: affiche 0.25s linear;
+}
+
+@keyframes affiche {
+  0% {
+    left: -10%;
     opacity: 0;
   }
-  70%{
-    opacity: 0;
-  }
-  100%{
+
+  100% {
     opacity: 1;
   }
 }
-/* animation rotate */
-
-.perpective{
-  perspective: 1100px;
+.input {
+  border: 1px solid rgba(0, 255, 255, 0.25);
 }
 
-.rotate{
-  animation: rotate 20s  linear infinite;
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
 }
-@keyframes rotate{
-  0%{
-
-    transform: rotateY(0deg)
-  }
-  100%{
-    transform: rotateY(360deg)
-  }
-}
-
-
-.swips {
-  flex-shrink: 1 !important;
-}
-.swiper-button-next::after,
-.swiper-button-prev::after{
-  display: none;
+.index10 {
+  z-index: 10;
+  background: rgba(33, 36, 46, 0.75);
+  backdrop-filter: blur(5px);
 }

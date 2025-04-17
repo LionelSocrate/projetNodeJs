@@ -7,11 +7,7 @@ const cookieParser = require("cookie-parser");
 
 const userRoutes = require("./routes/user.routes");
 const authRoutes = require("./routes/auth.routes");
-const projetRoutes = require("./routes/projet.routes");
-const villaRoutes = require("./routes/villa.routes");
-const rdvRoutes = require("./routes/rdv.routes");
-const reservationRoutes = require("./routes/reservation.routes");
-const contactRoutes = require("./routes/contact.routes");
+const visiteurRoutes = require("./routes/visiteur.routes");
 
 const express = require("express");
 require("dotenv").config({ path: "./config/.env" });
@@ -38,11 +34,7 @@ app.get("/jwtid", requireAuth, (req, res) => {
 
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
-app.use("/api/projet", projetRoutes);
-app.use("/api/villa", villaRoutes);
-app.use("/api/rdv", rdvRoutes);
-app.use("/api/reservation", reservationRoutes);
-app.use("/api/contact", contactRoutes);
+app.use("/api/visiteur", visiteurRoutes);
 
 app.listen(port, () => {
   console.log(`app is running at the port : ${port}`);
